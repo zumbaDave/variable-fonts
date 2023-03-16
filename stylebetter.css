@@ -1,0 +1,48 @@
+
+@font-face {
+    font-family: 'Kyiv Sans';
+    src: url('/fonts/KyivTypeSans.woff2') format('woff2-variations');
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+}
+
+/* Using custom properties.. makes it easier to work with variant fonts, as you can target individual properties easier */
+.variable-font {
+    --font-weight: 1;
+    --font-midline: 0;
+    --font-contrast: 250;
+    font-family: 'Kyiv Sans';
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: 1;
+    font-variation-settings: 
+        'wght' var(--font-weight),
+        'MIDL' var(--font-midline),
+        'CONT' var(--font-contrast);
+        transition: font-variation-settings 500ms;
+}
+
+.variable-font:hover {
+    /* Can choose the one we want to change, or multiple properties */
+    --font-weight: 1000;
+    --font-midline: -1000;
+}

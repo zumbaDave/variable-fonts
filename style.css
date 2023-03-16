@@ -1,0 +1,48 @@
+
+@font-face {
+    font-family: 'Kyiv Sans';
+    src: url('/fonts/KyivTypeSans.woff2') format('woff2-variations');
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+}
+
+.variable-font {
+    font-family: 'Kyiv Sans';
+    font-size: 5rem;
+    line-height: 1.1;
+    /* font-weight: 1; */
+
+    /* Need to use font-variation settings if there is a custom property, not needed but makes it simpler for hover animation */
+    /* font-variation-settings: 'CONT' 200, 'MIDL' -1000; */
+    
+    /* Putting font weight into the font-variation-settings */
+    font-variation-settings: 'wght' 1, 'CONT' 200, 'MIDL' -1000;
+    
+    /* transition: font-weight 500ms, font-variation-settings 500ms */;
+    transition: font-variation-settings 500ms;
+}
+
+.variable-font:hover {
+    font-weight: 1000;
+    /* font-variation-settings: 'MIDL' -1000, 'CONT' 0; */
+    font-variation-settings: 'wght' 1000, 'MIDL' -1000, 'CONT' 0;
+}
